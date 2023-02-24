@@ -21,7 +21,7 @@
     $res= mysqli_query($db, $query);
     $num= mysqli_num_rows($res);
     $row = mysqli_fetch_array($res,MYSQLI_ASSOC);
-    // $id=$row["rc_id"];
+    $id=$row["rc_id"];
 ?>
 
 <!doctype html>
@@ -170,28 +170,28 @@
            <div class="userpage">
                              <h4>Relief Center Information</h4><br>                        
                             <?php
-                            // $query2="SELECT * FROM rc_p_count WHERE rc_id='$id' ";
-                            // $res2=mysqli_query($db,$query2);
-                            // $row2 = mysqli_fetch_array($res2,MYSQLI_ASSOC);
+                            $query2="SELECT * FROM rc_p_count WHERE rc_id='$id' ";
+                            $res2=mysqli_query($db,$query2);
+                            $row2 = mysqli_fetch_array($res2,MYSQLI_ASSOC);
                            
-                            // if($num == 1){
-                            // $query2="INSERT INTO rc_p_count (rc_id) VALUES ('$id')";
-                            // mysqli_query($db,$query2);
+                            if($num == 1){
+                            $query2="INSERT INTO rc_p_count (rc_id) VALUES ('$id')";
+                            mysqli_query($db,$query2);
 
-                            // $sqlm="SELECT * FROM refugee_info WHERE rfg_gender='m' and rc_id='$id' and status='In camp' ";
-                            // $resm=mysqli_query($db,$sqlm);
-                            // $male=mysqli_num_rows($resm);
+                            $sqlm="SELECT * FROM refugee_info WHERE rfg_gender='m' and rc_id='$id' and status='In camp' ";
+                            $resm=mysqli_query($db,$sqlm);
+                            $male=mysqli_num_rows($resm);
 
-                            // $sqlf="SELECT * FROM refugee_info WHERE rfg_gender='f' and rc_id='$id' and status='In camp' ";
-                            // $resf=mysqli_query($db,$sqlf);
-                            // $female=mysqli_num_rows($resf);
+                            $sqlf="SELECT * FROM refugee_info WHERE rfg_gender='f' and rc_id='$id' and status='In camp' ";
+                            $resf=mysqli_query($db,$sqlf);
+                            $female=mysqli_num_rows($resf);
 
-                            // $sqlc="SELECT * FROM refugee_info WHERE ((TIMESTAMPDIFF(YEAR,rfg_dob,CURDATE()))<18) and status='In camp' and rc_id='$id' ";
-                            // $resc=mysqli_query($db,$sqlc);
-                            // $children=mysqli_num_rows($resc);
+                            $sqlc="SELECT * FROM refugee_info WHERE ((TIMESTAMPDIFF(YEAR,rfg_dob,CURDATE()))<18) and status='In camp' and rc_id='$id' ";
+                            $resc=mysqli_query($db,$sqlc);
+                            $children=mysqli_num_rows($resc);
 
-                            // $query2="UPDATE rc_p_count SET male='$male',female='$female',children='$children' WHERE rc_id='$id' ";
-                            // $result2=mysqli_query($db,$query2);
+                            $query2="UPDATE rc_p_count SET male='$male',female='$female',children='$children' WHERE rc_id='$id' ";
+                            $result2=mysqli_query($db,$query2);
 
 
 
@@ -205,15 +205,15 @@
                                 <tr> <th>District</th> <td>:</td><td><?php  echo "{$row['district']}<br>"; ?></td><tr>  
                                 <tr><th>Address</th><td>:</td><td><?php  echo "{$row['address']}<br>"; ?></td> </tr>   
                                 <tr><th>Appointed Person</th><td>:</td><td><?php  echo "{$row['pcharge']}<br>"; ?></td>  </tr>
-                                <tr><th>Relief Center Capacity</th><td>:</td><td> peoples</td></tr>
-                                <tr><th>Males</th><td>:</td><td></td></tr>
-                                <tr><th>Females</th><td>:</td><td></td></tr>
-                                <tr><th>Childrens</th><td>:</td><td></td></tr>
-                                <tr><th>Required Volunteers</th><td>:</td><td></td></tr>                                     
+                                <tr><th>Relief Center Capacity</th><td>:</td><td><?php  echo "{$row2['capacity']}";?> peoples</td></tr>
+                                <tr><th>Males</th><td>:</td><td><?php  echo "{$row2['male']}";?></td></tr>
+                                <tr><th>Females</th><td>:</td><td><?php  echo "{$row2['female']}";?></td></tr>
+                                <tr><th>Childrens</th><td>:</td><td><?php  echo "{$row2['children']}";?></td></tr>
+                                <tr><th>Required Volunteers</th><td>:</td><td><?php  echo "{$row2['volunteer']}";?></td></tr>                                     
                             </table><br>
                             </div>
                          <?php
-                            // }
+                            }
 
                             if($num == 0){
                                 echo "No Active Relief Centers Available,<a href='rcusercreate.php'>Create</a> a new One";
@@ -242,7 +242,6 @@
     </section>
     <!--::our client part end::-->
 
-   
     
     <!-- jquery plugins here-->
 
