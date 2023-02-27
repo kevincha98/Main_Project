@@ -99,7 +99,12 @@ $address = $row1['address'];
             </div>
         </div>
     </section>
-    <!-- intro_video_bg part start-->  
+    <!-- intro_video_bg part start-->
+    
+
+    
+
+    
 
 
     <!--::our client part start::-->
@@ -109,7 +114,7 @@ $address = $row1['address'];
             $res3=mysqli_query($db,$q3);
             $row3=mysqli_fetch_array($res3,MYSQLI_ASSOC);
 
-            
+            $total=$row3['male']+$row3['female'];
 
           ?>
         <div class="container">
@@ -118,9 +123,9 @@ $address = $row1['address'];
             <label><b>Contact No:</b></label>&nbsp;&nbsp;<b style="color: #000"><?php echo "$contact";  ?></b><br><br>
             <label><b>District:</b></label>&nbsp;&nbsp;<b style="color: #000"><?php echo "$district";  ?></b><br><br>
             <label><b>Address:</b></label>&nbsp;&nbsp;<b style="color: #000"><?php echo "$address";  ?></b><br><br>
-            <label><b>Relief Center Capacity:</b></label>&nbsp;&nbsp;<b style="color: #000"> peoples</b><br><br>
-             <label><b>No.of.Peoples :</b></label>&nbsp;&nbsp;<b style="color: #000"></b><br><br>
-            <label><b>Required Volunteers:</b></label>&nbsp;&nbsp;<b style="color: #000"></b><br><br>
+            <label><b>Relief Center Capacity:</b></label>&nbsp;&nbsp;<b style="color: #000"><?php echo $row3['capacity']; ?> peoples</b><br><br>
+             <label><b>No.of.Peoples :</b></label>&nbsp;&nbsp;<b style="color: #000"><?php echo $total; ?></b><br><br>
+            <label><b>Required Volunteers:</b></label>&nbsp;&nbsp;<b style="color: #000"><?php echo $row3['volunteer'];  ?></b><br><br>
             
         </div>
         <!--   -->
@@ -134,10 +139,7 @@ $address = $row1['address'];
                     <?php 
                     while ($row = mysqli_fetch_array($res2,MYSQLI_ASSOC)) 
                     {
-                    echo" <tr>
-                    <td>{$row['item']}</td>
-                    <td>{$row['description']}</td>
-                    <td>{$row['qty']}</td>";
+                    echo" <tr><td>{$row['item']}</td><td>{$row['description']}</td><td>{$row['qty']}</td>";
 
                     }
                     ?>
@@ -149,7 +151,8 @@ $address = $row1['address'];
     </section>
     <!--::our client part end::-->
 
-   <
+
+    
     <!-- jquery plugins here-->
 
     <script src="js/jquery-1.12.1.min.js"></script>

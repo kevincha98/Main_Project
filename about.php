@@ -120,7 +120,7 @@
                 </div>
             </form>
             <?php
-            $db = mysqli_connect('localhost', 'root', '', 'carehand');
+            $db = mysqli_connect('localhost', 'root', '', 'care');
             if(isset($_POST['send']))
             {
                 $subject=mysqli_real_escape_string($db, $_POST['subject']);
