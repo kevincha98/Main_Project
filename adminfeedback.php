@@ -120,7 +120,7 @@
         .heading{background-color: #333332;color:#cecfc8 ;}
         .home h3{text-transform: uppercase;font-family: courier;}
         .no{font-size: 60px;text-align: center;}
-        .report{position: relative;left: 160px;top: 80px;}
+        .report{position: relative;left: 85gipx;top: 80px;}
         
     </style>
     <section class="feature_part">
@@ -140,7 +140,7 @@
            <div class="home">
                <div class="report"><b>FEEDBACKS FROM USERS</b>
                    <table border style="width: 150%;">
-                       <thead class="heading"><th>NO</th><th>SUBJECT</th><th>MESSAGE</th><th>NAME</th><th>EMAIL</th><th>DATE</th></thead>
+                       <thead class="heading"><th>SUBJECT</th><th>MESSAGE</th><th>NAME</th><th>EMAIL</th><th>DATE</th></thead>
                                <?php
 
                                 $sql1="SELECT * FROM feedback ";
@@ -148,7 +148,7 @@
                                 while($row=mysqli_fetch_array($res1,MYSQLI_ASSOC))
                                 {
                                     echo  "<tr>
-                                    <td>{$row['Sno']}</td>
+    
                                     <td>{$row['subject']}</td>
                                     <td>{$row['message']}</td>
                                     <td>{$row['name']}</td>
