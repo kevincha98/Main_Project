@@ -48,7 +48,7 @@ $db = mysqli_connect('localhost', 'root', '', 'care');
     <!-- style CSS -->
     <link rel="stylesheet" href="css/style.css">
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
     (function(d, m){
         var kommunicateSettings = 
             {"appId":"1184c9013f5377226f54b79f86a5bca1f","popupWidget":true,"automaticChatOpenOnNavigation":true};
@@ -58,7 +58,7 @@ $db = mysqli_connect('localhost', 'root', '', 'care');
         window.kommunicate = m; m._globals = kommunicateSettings;
     })(document, window.kommunicate || {});
 /* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
-</script>
+</script> -->
 
 </head>
 

@@ -138,7 +138,7 @@
 
            <div class="home">
                <div class="report"><b>VOLUNTEERS</b>
-                   <table border style="width: 100%;">
+                   <table border style="width: 90%;">
                        <thead class="heading"><th>NAME</th><th>GENDER</th><th>AADHAR</th><th>CONTACT</th><th>ADDRESS</th><th>DISTRICT</th><TH>RC ID</TH></thead>
                        
                                <?php

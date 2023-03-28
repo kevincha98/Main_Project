@@ -119,7 +119,7 @@
         .home{display: inline-flex;}
         .heading{background-color: #333332;color:#cecfc8 ;}
         .home h3{text-transform: uppercase;font-family: courier;}
-        .no{font-size: 60px;text-align: center;}
+        .no{font-size: 10px;text-align: center;}
         .report{position: relative;left: 85gipx;top: 80px;}
         
     </style>
