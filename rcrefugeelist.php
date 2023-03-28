@@ -145,7 +145,7 @@
     <!-- feature_part start-->
     <style type="text/css">
         .feature_part { padding: 0px 0 150px 5px;display: inline-flex;}
-        .vertical-menu{width: 125px;}
+        .vertical-menu{width: 150px;}
         .vertical-menu a{background-color: #eee;color: black;display: block;padding: 12px;text-decoration: none;}
         .vertical-menu a:hover{background-color: #ccc;}
         .vertical-menu a.active{background-color: #00c424;color: white;}

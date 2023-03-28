@@ -114,7 +114,7 @@
                         <table>
                         	                       	
                         	<tr><td>NAME</td><td>:</td><td><input type="text" name="name" value="<?php echo $row['1']; ?>" size="35"></td></tr>
-                        	<tr><td>EMAIL</td><td>:</td><td><input type="email" name="email" value="<?php echo $row['2']; ?>" style="width: 279px;"></td></tr>
+                        	<tr><td>EMAIL</td><td>:</td><td><input type="email" name="email" value="<?php echo $row['2']; ?>" style="width: 279px;" readonly></td></tr>
                         	<tr><td>CONTACT</td><td>:</td><td><input type="number" name="contact" value="<?php echo $row['3']; ?>" style="width: 279px;"></td></tr>
                             <tr><td>ADDRESS</td><td>:</td><td><textarea name="address" style="resize: none;width: 279px;"><?php echo $row['4']; ?></textarea></td></tr>
                         	

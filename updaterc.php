@@ -138,7 +138,7 @@
                         <table>
                         	<tr><td><b>RELIEF CENTER</b></td></tr>
                         	<tr><td>NAME</td><td>:</td><td><input type="text" name="name" value="<?php echo $name;  ?>" size="35"></td></tr>
-                        	<tr><td>CONTACT NO</td><td>:</td><td><input type="number" name="contact" value="<?php echo $contact;  ?>" style="width: 279px;"></td></tr>
+                        	<tr><td>CONTACT NO</td><td>:</td><td><input type="number" name="contact" value="<?php echo $contact;  ?>" style="width: 279px;" readonly></td></tr>
                         	<tr><td>DISTRICT</td><td>:</td><td><input type="text" name="district" value="<?php echo $district;  ?>" style="width: 279px;"></td></tr>
                         	<tr><td>ADDRESS</td><td>:</td><td><input type="text" name="address" value="<?php echo $address;  ?>" size="35"></td></tr>
                             <tr><td>PERSON IN CHARGE</td><td>:</td><td><input type="text" name="pic" size="35" value="<?php echo $pic;  ?>"></td></tr>

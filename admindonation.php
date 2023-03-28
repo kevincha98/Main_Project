@@ -137,9 +137,9 @@
         </div>
 
            <div class="home">
-               <div class="report"><b>DONATION REQUESTS</b>
+               <div class="report"><b>DONATION </b>
                    <table border style="width: 150%;">
-                       <thead class="heading"><th>DONATION ID</th><th>ITEMS</th><th>NAME</th><th>CONTACT NO</th><th>DISTRICT</th><th>ADDRESS</th><th>STATUS</th><th style="text-align: center;"><span class="ti-settings"></span></th></thead>
+                       <thead class="heading"><th>DONATION ID</th><th>ITEMS</th><th>NAME</th><th>CONTACT NO</th><th>DISTRICT</th><th>ADDRESS</th><th>Date</th><th>STATUS</th><th style="text-align: center;"><span class="ti-settings"></span></th></thead>
                                <?php
 
                                 $sql1="SELECT * FROM donate ORDER BY transaction desc ";
@@ -153,6 +153,7 @@
                                     <td>{$row['contact']}</td>
                                     <td>{$row['district']}</td>
                                     <td>{$row['address']}</td>
+                                    <td>{$row['date']}</td>
                                     <td><b>{$row['transaction']}</b></td>
                                     <td style='width:3%;text-align:center;'><a href='change_don_status.php?did={$row['d_id']}'><span class='ti-reload' title='Change status'></span></a></td></tr>";
                                 }

@@ -101,8 +101,8 @@
                             <table class="tbl">
                             <tbody class="body">
                             <tr><td><labe>NAME</labe></td><td>:&nbsp;<input type="text" name="name" required></td></tr>
-                            <tr><td><labe>GENDER</labe></td><td>:&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" value="m" required> Male&nbsp;&nbsp; 
-                            <input type="radio" name="gender" value="f" required> Female</td></tr>
+                            <tr><td><labe>GENDER</labe></td><td>:&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" value="Male" required> Male&nbsp;&nbsp; 
+                            <input type="radio" name="gender" value="Female" required> Female</td></tr>
                             <tr><td><labe>AGE</labe></td><td>:&nbsp;<input type="number" name="age" required></td></tr>
                             <tr><td><labe>MOBILE NO</labe></td><td>:&nbsp;<input type="number" name="ph" required></td></tr>
                             <tr><td><labe>AADHAR NO</labe></td><td>:&nbsp;<input type="number" name="aadhar" required></td></tr>

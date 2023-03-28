@@ -202,7 +202,7 @@
                             <h4>Refugee Register</h4>
                            <form  method="post">
                             <label>Name</label><br><input type="text" name="name" class="input" required><br>
-                            <label>Gender</label><br><input type="radio" name="sex" value="m" required> Male <input type="radio" name="sex" value="f" required> Female<br><br>
+                            <label>Gender</label><br><input type="radio" name="sex" value="Male" required> Male <input type="radio" name="sex" value="Female" required> Female<br><br>
                             <label>D.O.B</label><br><input type="Date" name="dob" class="input" required><br>
                             <label>Aadhar No</label><br><input type="number" name="aadhar" class="input" required><br>
                             <label>Address</label><br><input type="text" name="address" class="input" required><br>

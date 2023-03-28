@@ -117,16 +117,16 @@ $address = $row1['address'];
             $total=$row3['male']+$row3['female'];
 
           ?>
-        <div class="container">
-            <label><b>Name Of Center:</b></label>&nbsp;&nbsp;<b style="color: #000"><?php echo "$name";  ?></b><br><br>
-            <label><b>Person in Charge:</b></label>&nbsp;&nbsp;<b style="color: #000"><?php echo "$pcharge";  ?></b><br><br>
-            <label><b>Contact No:</b></label>&nbsp;&nbsp;<b style="color: #000"><?php echo "$contact";  ?></b><br><br>
-            <label><b>District:</b></label>&nbsp;&nbsp;<b style="color: #000"><?php echo "$district";  ?></b><br><br>
-            <label><b>Address:</b></label>&nbsp;&nbsp;<b style="color: #000"><?php echo "$address";  ?></b><br><br>
-            <label><b>Relief Center Capacity:</b></label>&nbsp;&nbsp;<b style="color: #000"><?php echo $row3['capacity']; ?> peoples</b><br><br>
-             <label><b>No.of.Peoples :</b></label>&nbsp;&nbsp;<b style="color: #000"><?php echo $total; ?></b><br><br>
-            <label><b>Required Volunteers:</b></label>&nbsp;&nbsp;<b style="color: #000"><?php echo $row3['volunteer'];  ?></b><br><br>
-            
+        <div class="container"><table>
+          <tr></th>  <b>Name Of Center:</b>&nbsp;&nbsp;<b style="color: #000"><?php echo "$name";  ?></b><br><br></th></tr>
+          <tr></th>   <b>Person in Charge:</b></label>&nbsp;&nbsp;<b style="color: #000"><?php echo "$pcharge";  ?></b><br><br></th></tr>
+          <tr></th>  <b>Contact No:</b></label>&nbsp;&nbsp;<b style="color: #000"><?php echo "$contact";  ?></b><br><br></th></tr>
+          <tr></th>  <b>District:</b></label>&nbsp;&nbsp;<b style="color: #000"><?php echo "$district";  ?></b><br><br></th></tr>
+          <tr></th>  <b>Address:</b></label>&nbsp;&nbsp;<b style="color: #000"><?php echo "$address";  ?></b><br><br></th></tr>
+          <tr></th>  <b>Relief Center Capacity:</b></label>&nbsp;&nbsp;<b style="color: #000"><?php echo $row3['capacity']; ?> peoples</b><br><br></th></tr>
+          <tr></th>    <b>No.of.Peoples :</b></label>&nbsp;&nbsp;<b style="color: #000"><?php echo $total; ?></b><br><br></th></tr>
+          <tr></th>   <b>Required Volunteers:</b></label>&nbsp;&nbsp;<b style="color: #000"><?php echo $row3['volunteer'];  ?></b><br><br></th></tr>
+            </table>
         </div>
         <!--   -->
         <div class="container2" style="position: absolute;right: 500px;top: 50%;">
@@ -139,7 +139,10 @@ $address = $row1['address'];
                     <?php 
                     while ($row = mysqli_fetch_array($res2,MYSQLI_ASSOC)) 
                     {
-                    echo" <tr><td>{$row['item']}</td><td>{$row['description']}</td><td>{$row['qty']}</td>";
+                    echo" <tr>
+                    <td>{$row['item']}</td>
+                    <td>{$row['description']}</td>
+                    <td>{$row['qty']}</td>";
 
                     }
                     ?>

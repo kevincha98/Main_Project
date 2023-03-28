@@ -92,7 +92,7 @@
         <div class="note" style="position: relative;left: 390px;">
             <br><h5 style="color: red;font-family: arial;">* Only donate items that are new,unused,or 'gently used',which means items that are in good condition,clean,and presentable.
             <br>* You can also donate Medical Supplies,please don't donate expired stocks.<br>
-            * Do not donate items in disrepair that don't work properly,are missing parts,or are ripped,torn,or stained.<br></h5>
+            * Do not donate items in disrepair that don't work properly,are missing parts,or are ripped,torn,or stained.<br>*Details are not compulsory,But atleast the Name and Phone number Required For collecting the Details</h5>
         </div>
         <div class="container" style="background-color: #1f1f1f; position: relative;color: #fff;height: 460px;">
            
@@ -102,8 +102,8 @@
                     <table>
                     <tr><td><label><b>Name</b></label></td><td>:<input type="text" name="name" required style="width: 336px;"></td><br> </tr>
                     <tr><td><label><b>Contact</b></label></td><td>:<input type="number" name="contact" required style="width: 336px;"></td><br></tr>
-                    <tr><td><label><b>Address</b></label></td><td>:<input type="text" name="address" style="height: 50px;width: 336px;" required ></td></tr>
-                    <tr><td><label><b>District</b></label></td><td>:<input type="text" name="district" required style="width: 336px;"></td></tr>
+                    <tr><td><label><b>Address</b></label></td><td>:<input type="text" name="address" style="height: 50px;width: 336px;"  ></td></tr>
+                    <tr><td><label><b>District</b></label></td><td>:<input type="text" name="district" style="width: 336px;"></td></tr>
                         
                     </table><br>
                     <input type="submit" name="donate" value="DONATE" style="position: relative;left: 325px;background-color: green;color: #fff" >
@@ -124,8 +124,9 @@
                                     echo "Enter a valid number.";
                             }
                             else{
-                             echo "Donation request has been successfully send.";  
-                             $query="INSERT INTO donate (items,name,contact,address,district) VALUES ('$items','$name','$contact','$address','$district')";
+                             echo "Donation request has been successfully send.";
+                             $date=date("Y-m-d");  
+                             $query="INSERT INTO donate (items,name,contact,address,district,date) VALUES ('$items','$name','$contact','$address','$district','$date')";
                              mysqli_query($db,$query);
                             }
                         } 

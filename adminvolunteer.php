@@ -110,8 +110,8 @@
 
     <!-- feature_part start-->
     <style type="text/css">
-        .feature_part { padding: 0px 0 170px 30px;display: inline-flex;}
-        .vertical-menu{width: 120px;}
+        .feature_part { padding: 15px 0 170px 30px;display: inline-flex;}
+        .vertical-menu{width: 200px;}
         .vertical-menu a{background-color: #eee;color: black;display: block;padding: 12px;text-decoration: none;}
         .vertical-menu a:hover{background-color: #ccc;}
         .vertical-menu a.active{background-color: #00c424;color: white;}
@@ -119,7 +119,7 @@
         .heading{background-color: #333332;color:#cecfc8 ;}
         .home h3{text-transform: uppercase;font-family: courier;}
         .no{font-size: 60px;text-align: center;}
-        .report{position: relative;left: 10px;top: 80px;height: 500px;width: 1400px; overflow-y: auto;}
+        .report{position: relative;left: 30px;top: 80px;height: 500px;width: 1400px; overflow-y: auto;}
         
     </style>
     <section class="feature_part">
@@ -138,14 +138,14 @@
 
            <div class="home">
                <div class="report"><b>VOLUNTEERS</b>
-                   <table border style="width: 90%;">
-                       <thead class="heading"><th>NAME</th><th>GENDER</th><th>AADHAR</th><th>CONTACT</th><th>ADDRESS</th><th>DISTRICT</th><TH>RC ID</TH></thead>
+                   <table border style="width: 80%;">
+                       <thead class="heading"><th>NAME</th><th>GENDER</th><th>AADHAR</th><th>CONTACT</th><th>ADDRESS</th><th>DISTRICT</th></thead>
                        
                                <?php
 
-                                $sql1="SELECT * FROM volunteer_info Order BY v_district ";
-                                $res1=mysqli_query($db,$sql1);
-                                while($row=mysqli_fetch_array($res1,MYSQLI_ASSOC))
+                                $sql3="SELECT * FROM volunteer_info Order BY v_district ";
+                                $res3=mysqli_query($db,$sql3);
+                                while($row=mysqli_fetch_array($res3,MYSQLI_ASSOC))
                                 {
                                     echo "<tr>
                                     <td>{$row['v_name']}</td>
@@ -154,7 +154,7 @@
                                     <td>{$row['v_contact']}</td>
                                     <td>{$row['v_address']}</td>
                                     <td>{$row['v_district']}</td>
-                                    <td>{$row['rc_id']}</td>
+                                   
                                     </tr>";
                                 }
 

@@ -150,12 +150,12 @@
     <style type="text/css">
         .intro_video_bg{height: 230px;}
         .feature_part { padding: 0px 0 170px 0px;display: inline-flex;}
-        .vertical-menu{width: 120px;}
+        .vertical-menu{width: 130px;}
         .vertical-menu a{background-color: #eee;color: black;display: block;padding: 12px;text-decoration: none;}
         .vertical-menu a:hover{background-color: #ccc;}
         .vertical-menu a.active{background-color: #00c424;color: white;}
         .home{display: inline-flex;position: relative;left:-300px;}
-        .fbox,.sbox,.tbox,.fbox,.dbox{height: 200px;width: 250px;background-color: #eee;margin-left: 5px;margin-top: 50px;box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1),0 0 0 2px rgba(255,255,255,255),0.3em 0.3em 1em rgba(0,0,0,0.3) ;}
+        .fbox,.sbox,.tbox,.fbox,.dbox{height: 200px;width: 250px;background-color: #eee;margin-left: 25px;margin-top: 50px;box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1),0 0 0 2px rgba(255,255,255,255),0.3em 0.3em 1em rgba(0,0,0,0.3) ;}
         .home h3{text-transform: uppercase;font-family: courier;}
         .no{font-size: 60px;text-align: center;}
         .notification{position: relative;top: 300px;left: 90px;width: 300px;text-transform: uppercase;letter-spacing: 1px;}
