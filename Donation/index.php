@@ -1,14 +1,5 @@
-<?php  
-     $db = mysqli_connect('localhost', 'root', '', 'care');
-
-
- ?>
-<!doctype html>
-<html lang="en">
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
+<!-- Required meta tags -->
+<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>CareHand</title>
     <link rel="icon" href="img/favicon.png">
@@ -45,13 +36,12 @@
                             aria-expanded="false" aria-label="Toggle navigation">
                             <span class="ti-menu"></span>
                         </button>
-
                         <div class="collapse navbar-collapse main-menu-item justify-content-end"
                             id="navbarSupportedContent">
                             <ul class="navbar-nav align-items-center">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="Donation/index.php"><span class="ti-share"></span> PAY</a>
-                                    <a class="nav-link" href="index.php"><span class="ti-home"></span> Home</a>
+                                   
+                                    <a class="nav-link" href="http://localhost/PRO/donate.php"><span class="ti-home"></span> Home</a>
                                     
                                 </li>
     
@@ -87,57 +77,75 @@
         </div>
     </section>
     <!-- intro_video_bg part start-->
+
+    <section class="feature_part"><center><h3>“Always give without remembering and always receive without forgetting."</h3></center>
+        <div class="note" style="position: relative;left: 390px;">
+            <br><h5 style="color: red;font-family: arial;">* Giving does not only precede receiving; it is the reason for it. It is in giving that we receive.
+            <br>* It’s easier to take than to give. It’s nobler to give than to take. The thrill of taking lasts a day. The thrill of giving lasts a lifetime.<br></h5>
+        </div>
     
 
-    <!-- feature_part start-->
-    <section class="feature_part"><center><h3>DONATE SOME OF YOUR THINGS THAT YOU DON'T USE OR NEED ANYMORE.</h3></center>
-        <div class="note" style="position: relative;left: 390px;">
-            <br><h5 style="color: red;font-family: arial;">* Only donate items that are new,unused,or 'gently used',which means items that are in good condition,clean,and presentable.
-            <br>* You can also donate Medical Supplies,please don't donate expired stocks.<br>
-            * Do not donate items in disrepair that don't work properly,are missing parts,or are ripped,torn,or stained.<br>*Details are not compulsory,But atleast the Name and Phone number Required For collecting the Details</h5>
-        </div>
-        <div class="container" style="background-color: #1f1f1f; position: relative;color: #fff;height: 460px;">
-           
-               <div class="donate" style="position: relative;left: 360px;top: 20px;">
-                <form method="post" >
-                    <label><b>ITEMS</b></label><br><textarea style="resize: none;height: 100px;width: 400px;" name="items" required placeholder="Please Enter Items & details...."></textarea>
-                    <table>
-                    <tr><td><label><b>Name</b></label></td><td>:<input type="text" name="name" required style="width: 336px;"></td><br> </tr>
-                    <tr><td><label><b>Contact</b></label></td><td>:<input type="number" name="contact" required style="width: 336px;"></td><br></tr>
-                    <tr><td><label><b>Address</b></label></td><td>:<input type="text" name="address" style="height: 50px;width: 336px;"  ></td></tr>
-                    <tr><td><label><b>District</b></label></td><td>:<input type="text" name="district" style="width: 336px;"></td></tr>
-                        
-                    </table><br>
-                    <input type="submit" name="donate" value="DONATE" style="position: relative;left: 325px;background-color: green;color: #fff" >
-                   
-                </form>
 
-                <br><ceneter>
-                    <?php  if(isset($_POST['donate']))
-                            {
-                                $items=mysqli_real_escape_string($db,$_POST['items']);
-                                $name=mysqli_real_escape_string($db, $_POST['name']);
-                                $contact=mysqli_real_escape_string($db, $_POST['contact']);
-                                $address=mysqli_real_escape_string($db, $_POST['address']);
-                                $district=mysqli_real_escape_string($db, $_POST['district']);
-                            // Number checks for length 10
-                             if(strlen((string)$contact)!=10)
-                            {
-                                    echo "Enter a valid number.";
-                            }
-                            else{
-                             echo "Donation request has been successfully send.";
-                             $date=date("Y-m-d");  
-                             $query="INSERT INTO donate (items,name,contact,address,district,date) VALUES ('$items','$name','$contact','$address','$district','$date')";
-                             mysqli_query($db,$query);
-                            }
-                        } 
-                     ?>    
-                    </ceneter>
-               </div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<form><center>
+
+
+    <!-- <input type="text" name = "name" id = "name">
+    <br>
+    <input type="text" name="amt" id="amt">
+<br> -->
+    <input type="button" name="pay" id ="rzp-button1" value="pay now" onclick="pay_now()">
+    
+    </center></form>
+<script>
+    function pay_now(){
+
+    var name=jQuery('#name').val();
+    var amt=jQuery('#amt').val();
+    var options = {
+    "key": "rzp_test_cPbYb6fKTgdBqf",
+    "amount": 100*100, 
+    "currency": "INR",
+    "name": "CareHand",
+    "description": "Test Transaction",
+    "image": "https://drive.google.com/file/d/1FJCNPPMhML96z3s4IrR8-yGU4A6HLm2X/view?usp=share_link",
+    "handler":function(response){
+        console.log(response);
+        jQuery.ajax({
+            type:'POST',
+            url:'payment.php',
+            data:"payment_id="+response.razorpay_payment_id+"&amt="+amt+"&name="+name,
+            success:function(result){
+                window.location.href="thankyou.php";
+            }
+
+        })
+        // if(response){
+        //     window.location.href="/adsol/index.php";
+        // }
+       
+
+    }
+};
+
+var rzp1 = new Razorpay(options);
+document.getElementById('rzp-button1').onclick = function(e){
+    rzp1.open();
+    e.preventDefault();
+}
+
+}
+</script>
+
+
+</div>
         </div>
         <br>
-        <div style="position: relative;left: 310px;font-weight: bold;">>>Our people will contact you to confirm your donation <b>>></b> Collects items that you donated from your doorstep <b><br>>></b> Our people will check item quality from there .........!<b> >></b> Don't Hesitate to ask for receipt.  </div>
+        <div style="position: relative;left: 310px;font-weight: bold;"><br>>Our people will contact you to confirm your donation <b>>></b> Collects items that you donated from your doorstep <b><br>>></b> Our people will check item quality from there .........!<b> >></b> Don't Hesitate to ask for receipt.  </div>
     </section>
     <!-- feature_part start-->
 

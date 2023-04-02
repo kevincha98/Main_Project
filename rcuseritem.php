@@ -196,6 +196,8 @@
                                         $db = mysqli_connect('localhost', 'root', '', 'care');
                                         $sql = "SELECT * FROM rc_stock WHERE  rc_id='$id' ";           //check here for more valuation<---
                                         $res = mysqli_query($db,$sql);
+                                      
+                                        
                                      
                                         while ($row = mysqli_fetch_array($res,MYSQLI_ASSOC)) 
                                         {
@@ -203,7 +205,7 @@
                                         <td>{$row['item']}</td>
                                         <td>{$row['description']}</td>
                                         <td>{$row['qty']}</td>
-                                      
+                                       
                                         <td><a href='createrc.php?itm_no={$row['item_no']}'><span class='ti-trash'></span></a></td> ";
 
                                         }

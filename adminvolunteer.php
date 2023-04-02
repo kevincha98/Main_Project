@@ -143,9 +143,9 @@
                        
                                <?php
 
-                                $sql3="SELECT * FROM volunteer_info Order BY v_district ";
-                                $res3=mysqli_query($db,$sql3);
-                                while($row=mysqli_fetch_array($res3,MYSQLI_ASSOC))
+                                $sql1="SELECT * FROM volunteer_info Order BY v_district ";
+                                $res1=mysqli_query($db,$sql1);
+                                while($row=mysqli_fetch_array($res1,MYSQLI_ASSOC))
                                 {
                                     echo "<tr>
                                     <td>{$row['v_name']}</td>
